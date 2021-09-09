@@ -2,6 +2,7 @@ package com.sofka.taller;
 
 import com.sofka.taller.ejercicios.ejercicio3.Circle;
 import com.sofka.taller.ejercicios.ejercicio4.Product;
+import com.sofka.taller.ejercicios.ejercicio5.EvenOdd;
 import com.sofka.taller.ejercicios.ejercicios1y2.Numbers;
 
 import javax.swing.*;
@@ -73,11 +74,24 @@ public class Main {
 
                         String responseIVA = product.responsePriceIvA(nameProduct,price);
 
-                        JOptionPane.showMessageDialog (null,responseIVA, "Comparar numeros",
+                        JOptionPane.showMessageDialog (null,responseIVA, "Productos con iva",
                                 JOptionPane.INFORMATION_MESSAGE);
                         break;
                     case 5:
-                        System.out.println("Revisando ejercicio 5");
+
+                        EvenOdd evenOdd = new EvenOdd();
+
+                        String resultNumbersPair = evenOdd.generateNumberPair();
+
+                        JOptionPane.showMessageDialog (null,resultNumbersPair, "NUMEROS PARES DEL 1 AL 100",
+                                JOptionPane.INFORMATION_MESSAGE);
+
+
+                        String resultNumbersOdd = evenOdd.generateNumberOdd();
+
+                        JOptionPane.showMessageDialog (null,resultNumbersOdd, "NUMEROS IMPARES DEL 1 AL 100",
+                                JOptionPane.INFORMATION_MESSAGE);
+
                         break;
                     case 6:
                         System.out.println("Revisando ejercicio 6");
