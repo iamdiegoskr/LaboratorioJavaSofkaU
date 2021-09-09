@@ -3,6 +3,7 @@ package com.sofka.taller;
 import com.sofka.taller.ejercicios.ejercicio3.Circle;
 import com.sofka.taller.ejercicios.ejercicio4.Product;
 import com.sofka.taller.ejercicios.ejercicio5.EvenOdd;
+import com.sofka.taller.ejercicios.ejercicio6.EvenAddWithFor;
 import com.sofka.taller.ejercicios.ejercicios1y2.Numbers;
 
 import javax.swing.*;
@@ -94,7 +95,19 @@ public class Main {
 
                         break;
                     case 6:
-                        System.out.println("Revisando ejercicio 6");
+
+                        EvenAddWithFor evenAddWithFor = new EvenAddWithFor();
+
+                        evenAddWithFor.isOddOrEven();
+
+                        String resultNumberEven = evenAddWithFor.getNumbersEven();
+                        String resultNumberOdd2 = evenAddWithFor.getNumberOdd();
+
+                        JOptionPane.showMessageDialog (null,resultNumberEven, "NUMEROS PARES DEL 1 AL 100",
+                                JOptionPane.INFORMATION_MESSAGE);
+
+                        JOptionPane.showMessageDialog (null,resultNumberOdd2, "NUMEROS IMPARES DEL 1 AL 100",
+                                JOptionPane.INFORMATION_MESSAGE);
                         break;
                     case 7:
                         System.out.println("Revisando ejercicio 7");
