@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15b336f1-6b9f-49de-b065-5f6271304ee8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sofka/taller/ejercicios/ejercicio7/NumberZero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sofka/taller/ejercicios/ejercicio8/Day.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sofka/taller/ejercicios/ejercicio8/Weekdays.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/taller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sofka/taller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sofka/taller/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sofka/taller/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>

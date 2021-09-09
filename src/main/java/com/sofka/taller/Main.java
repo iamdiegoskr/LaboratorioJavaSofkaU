@@ -5,6 +5,7 @@ import com.sofka.taller.ejercicios.ejercicio4.Product;
 import com.sofka.taller.ejercicios.ejercicio5.EvenOdd;
 import com.sofka.taller.ejercicios.ejercicio6.EvenAddWithFor;
 import com.sofka.taller.ejercicios.ejercicio7.NumberZero;
+import com.sofka.taller.ejercicios.ejercicio8.Day;
 import com.sofka.taller.ejercicios.ejercicios1y2.Numbers;
 
 import javax.swing.*;
@@ -121,7 +122,10 @@ public class Main {
 
                         break;
                     case 8:
-                        System.out.println("Revisando ejercicio 8");
+
+                        Day day = new Day();
+                        day.isWorkDay();
+
                         break;
                     case 9:
                         System.out.println("Revisando ejercicio 9");
