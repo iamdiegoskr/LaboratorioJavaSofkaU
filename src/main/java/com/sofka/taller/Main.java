@@ -1,8 +1,10 @@
 package com.sofka.taller;
 
+import com.sofka.taller.ejercicios.ejercicio3.Circle;
 import com.sofka.taller.ejercicios.ejercicios1y2.Numbers;
 
 import javax.swing.*;
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -12,6 +14,8 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner lea = new Scanner(System.in);
+
+        DecimalFormat df2 = new DecimalFormat("#.##");
 
         int option = 0;
 
@@ -32,24 +36,32 @@ public class Main {
                         Numbers numbers = new Numbers();
                         String result = numbers.biggerNumber(number1,number2);
 
-                        JOptionPane.showMessageDialog (null, result, "Ejercicio 1",
+                        JOptionPane.showMessageDialog (null, result, "Comparar numeros",
                                 JOptionPane.INFORMATION_MESSAGE);
-
                         break;
                     case 2:
-                        
+
                         int numberOne = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un numero"));
                         int numberTwo = Integer.parseInt(JOptionPane.showInputDialog("Ingrese otro numero"));
 
                         Numbers numbers2 = new Numbers();
                         String resultNumber = numbers2.biggerNumber(numberOne,numberTwo);
 
-                        JOptionPane.showMessageDialog (null, resultNumber, "Ejercicio 1",
+                        JOptionPane.showMessageDialog (null, resultNumber, "Comparar numeros",
                                 JOptionPane.INFORMATION_MESSAGE);
-
                         break;
                     case 3 :
-                        System.out.println("Revisando ejercicio 3");
+
+                        double radio = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el radio del circulo "));
+
+                        Circle circle = new Circle();
+                        double areaCircle = circle.calculateAreaCircle(radio);
+
+                        String response = "El area del circulo es de  " + df2.format(areaCircle) + " metros cuadrados";
+
+                        JOptionPane.showMessageDialog (null,response, "Comparar numeros",
+                                JOptionPane.INFORMATION_MESSAGE);
+
                         break;
                     case 4:
                         System.out.println("Revisando ejercicio 4");
