@@ -4,6 +4,7 @@ import com.sofka.taller.ejercicios.ejercicio3.Circle;
 import com.sofka.taller.ejercicios.ejercicio4.Product;
 import com.sofka.taller.ejercicios.ejercicio5.EvenOdd;
 import com.sofka.taller.ejercicios.ejercicio6.EvenAddWithFor;
+import com.sofka.taller.ejercicios.ejercicio7.NumberZero;
 import com.sofka.taller.ejercicios.ejercicios1y2.Numbers;
 
 import javax.swing.*;
@@ -110,7 +111,14 @@ public class Main {
                                 JOptionPane.INFORMATION_MESSAGE);
                         break;
                     case 7:
-                        System.out.println("Revisando ejercicio 7");
+
+                        NumberZero numberZero = new NumberZero();
+
+                        String responseNumberZero = numberZero.validateIfNumberIsZero();
+
+                        JOptionPane.showMessageDialog (null,responseNumberZero, "NUMERO MAYOR A 0",
+                                JOptionPane.INFORMATION_MESSAGE);
+
                         break;
                     case 8:
                         System.out.println("Revisando ejercicio 8");
