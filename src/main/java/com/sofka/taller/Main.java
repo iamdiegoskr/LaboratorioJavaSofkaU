@@ -3,6 +3,7 @@ package com.sofka.taller;
 import com.sofka.taller.ejercicios.ejercicio10.SpaceText;
 import com.sofka.taller.ejercicios.ejercicio11.Vowel;
 import com.sofka.taller.ejercicios.ejercicio12.ValidateText;
+import com.sofka.taller.ejercicios.ejercicio13.DateNow;
 import com.sofka.taller.ejercicios.ejercicio3.Circle;
 import com.sofka.taller.ejercicios.ejercicio4.Product;
 import com.sofka.taller.ejercicios.ejercicio5.EvenOdd;
@@ -175,7 +176,13 @@ public class Main {
                                 JOptionPane.INFORMATION_MESSAGE);
                         break;
                     case 13:
-                        System.out.println("Revisando ejercicio 13");
+
+                        DateNow dateNow = new DateNow();
+
+                        String currentDate = dateNow.checkCurrentDate();
+
+                        JOptionPane.showMessageDialog (null,currentDate, "DIFERENCIAS ENTRE TEXTOS",
+                                JOptionPane.INFORMATION_MESSAGE);
                         break;
                     case 14:
                         System.out.println("Revisando ejercicio 14");
