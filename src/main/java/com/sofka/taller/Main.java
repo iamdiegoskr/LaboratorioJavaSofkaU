@@ -2,6 +2,7 @@ package com.sofka.taller;
 
 import com.sofka.taller.ejercicios.ejercicio10.SpaceText;
 import com.sofka.taller.ejercicios.ejercicio11.Vowel;
+import com.sofka.taller.ejercicios.ejercicio12.ValidateText;
 import com.sofka.taller.ejercicios.ejercicio3.Circle;
 import com.sofka.taller.ejercicios.ejercicio4.Product;
 import com.sofka.taller.ejercicios.ejercicio5.EvenOdd;
@@ -162,7 +163,16 @@ public class Main {
 
                         break;
                     case 12:
-                        System.out.println("Revisando ejercicio 12");
+
+                        ValidateText validateText = new ValidateText();
+
+                        String wordDifference1 = JOptionPane.showInputDialog("Ingrese una palabra");
+                        String wordDifference2 = JOptionPane.showInputDialog("Ingrese otra palabra para comparar");
+
+                        String responseDifference = validateText.showDifferenceTexts(wordDifference1,wordDifference2);
+
+                        JOptionPane.showMessageDialog (null,responseDifference, "DIFERENCIAS ENTRE TEXTOS",
+                                JOptionPane.INFORMATION_MESSAGE);
                         break;
                     case 13:
                         System.out.println("Revisando ejercicio 13");
