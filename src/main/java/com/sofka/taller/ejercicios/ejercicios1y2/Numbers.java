@@ -1,6 +1,6 @@
-package com.sofka.taller.ejercicios.ejercicio1;
+package com.sofka.taller.ejercicios.ejercicios1y2;
 
-public class Exercise1 {
+public class Numbers {
 
     public String biggerNumber(int num1, int num2){
 

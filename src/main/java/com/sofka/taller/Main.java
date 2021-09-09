@@ -1,6 +1,6 @@
 package com.sofka.taller;
 
-import com.sofka.taller.ejercicios.ejercicio1.Exercise1;
+import com.sofka.taller.ejercicios.ejercicios1y2.Numbers;
 
 import java.util.Scanner;
 
@@ -10,14 +10,25 @@ public class Main {
 
         Scanner lea = new Scanner(System.in);
 
+        Numbers numbers = new Numbers();
+
+        //Ejercio 1
+
+        int numberOne = 9;
+        int numberTwo = 7;
+
+        System.out.println(numbers.biggerNumber(numberOne,numberTwo));
+
+        //Ejercio 2
+
         System.out.println("Ingrese un numero");
         int number1 = lea.nextInt();
 
         System.out.println("Ingrese otro numero");
         int number2 = lea.nextInt();
 
-        Exercise1 exercise1 = new Exercise1();
-        System.out.println(exercise1.biggerNumber(number1,number2));
+
+        System.out.println(numbers.biggerNumber(number1,number2));
 
     }
 
