@@ -1,6 +1,7 @@
 package com.sofka.taller;
 
 import com.sofka.taller.ejercicios.ejercicio3.Circle;
+import com.sofka.taller.ejercicios.ejercicio4.Product;
 import com.sofka.taller.ejercicios.ejercicios1y2.Numbers;
 
 import javax.swing.*;
@@ -64,7 +65,16 @@ public class Main {
 
                         break;
                     case 4:
-                        System.out.println("Revisando ejercicio 4");
+
+                        String nameProduct = JOptionPane.showInputDialog("Ingrese nombre del producto");
+                        double price = Double.parseDouble(JOptionPane.showInputDialog("Ingrese precio del producto"));
+
+                        Product product = new Product();
+
+                        String responseIVA = product.responsePriceIvA(nameProduct,price);
+
+                        JOptionPane.showMessageDialog (null,responseIVA, "Comparar numeros",
+                                JOptionPane.INFORMATION_MESSAGE);
                         break;
                     case 5:
                         System.out.println("Revisando ejercicio 5");
