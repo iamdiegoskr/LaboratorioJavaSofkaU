@@ -6,6 +6,7 @@ import com.sofka.taller.ejercicios.ejercicio5.EvenOdd;
 import com.sofka.taller.ejercicios.ejercicio6.EvenAddWithFor;
 import com.sofka.taller.ejercicios.ejercicio7.NumberZero;
 import com.sofka.taller.ejercicios.ejercicio8.Day;
+import com.sofka.taller.ejercicios.ejercicio9.Text;
 import com.sofka.taller.ejercicios.ejercicios1y2.Numbers;
 
 import javax.swing.*;
@@ -128,7 +129,17 @@ public class Main {
 
                         break;
                     case 9:
-                        System.out.println("Revisando ejercicio 9");
+
+                        Text text = new Text();
+
+                        String textUser = JOptionPane.showInputDialog("Ingrese una frase");
+
+                        String resultText = text.replaceText(textUser);
+
+                        JOptionPane.showMessageDialog (null,resultText, "TEXTO REEMPLAZADO",
+                                JOptionPane.INFORMATION_MESSAGE);
+
+
                         break;
                     case 10:
                         System.out.println("Revisando ejercicio 10");
