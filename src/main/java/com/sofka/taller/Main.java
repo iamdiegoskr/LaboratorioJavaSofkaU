@@ -4,6 +4,7 @@ import com.sofka.taller.ejercicios.ejercicio10.SpaceText;
 import com.sofka.taller.ejercicios.ejercicio11.Vowel;
 import com.sofka.taller.ejercicios.ejercicio12.ValidateText;
 import com.sofka.taller.ejercicios.ejercicio13.DateNow;
+import com.sofka.taller.ejercicios.ejercicio14.Numbers2;
 import com.sofka.taller.ejercicios.ejercicio3.Circle;
 import com.sofka.taller.ejercicios.ejercicio4.Product;
 import com.sofka.taller.ejercicios.ejercicio5.EvenOdd;
@@ -185,7 +186,15 @@ public class Main {
                                 JOptionPane.INFORMATION_MESSAGE);
                         break;
                     case 14:
-                        System.out.println("Revisando ejercicio 14");
+
+                        Numbers2 sequenceNumber = new Numbers2();
+
+                        int numberStart = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un numero no mayor a 1000"));
+
+                        String sequence = sequenceNumber.printNumbers(numberStart);
+
+                        System.out.println(sequence);
+
                         break;
                     case 15:
                         System.out.println("Revisando ejercicio 15");
