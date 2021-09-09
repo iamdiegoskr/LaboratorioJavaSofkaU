@@ -1,5 +1,6 @@
 package com.sofka.taller;
 
+import com.sofka.taller.ejercicios.ejercicio10.SpaceText;
 import com.sofka.taller.ejercicios.ejercicio3.Circle;
 import com.sofka.taller.ejercicios.ejercicio4.Product;
 import com.sofka.taller.ejercicios.ejercicio5.EvenOdd;
@@ -138,11 +139,18 @@ public class Main {
 
                         JOptionPane.showMessageDialog (null,resultText, "TEXTO REEMPLAZADO",
                                 JOptionPane.INFORMATION_MESSAGE);
-
-
                         break;
                     case 10:
-                        System.out.println("Revisando ejercicio 10");
+
+                        SpaceText spaceText = new SpaceText();
+
+                        String textToRemoveSpace = JOptionPane.showInputDialog("Ingrese un mensaje");
+
+                        String responseTextWithoutSpaces = spaceText.removeSpaceText(textToRemoveSpace);
+
+                        JOptionPane.showMessageDialog (null,responseTextWithoutSpaces, "TEXTO SIN ESPACIOS",
+                                JOptionPane.INFORMATION_MESSAGE);
+
                         break;
                     case 11:
                         System.out.println("Revisando ejercicio 11");
