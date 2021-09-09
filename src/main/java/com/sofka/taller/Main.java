@@ -1,6 +1,7 @@
 package com.sofka.taller;
 
 import com.sofka.taller.ejercicios.ejercicio10.SpaceText;
+import com.sofka.taller.ejercicios.ejercicio11.Vowel;
 import com.sofka.taller.ejercicios.ejercicio3.Circle;
 import com.sofka.taller.ejercicios.ejercicio4.Product;
 import com.sofka.taller.ejercicios.ejercicio5.EvenOdd;
@@ -150,10 +151,15 @@ public class Main {
 
                         JOptionPane.showMessageDialog (null,responseTextWithoutSpaces, "TEXTO SIN ESPACIOS",
                                 JOptionPane.INFORMATION_MESSAGE);
-
                         break;
                     case 11:
-                        System.out.println("Revisando ejercicio 11");
+
+                        Vowel vowel = new Vowel();
+
+                        String messageUser = JOptionPane.showInputDialog("Ingrese un mensaje");
+
+                        vowel.showVowelsAndLength(messageUser);
+
                         break;
                     case 12:
                         System.out.println("Revisando ejercicio 12");
