@@ -5,6 +5,7 @@ import com.sofka.taller.ejercicios.ejercicio11.Vowel;
 import com.sofka.taller.ejercicios.ejercicio12.ValidateText;
 import com.sofka.taller.ejercicios.ejercicio13.DateNow;
 import com.sofka.taller.ejercicios.ejercicio14.Numbers2;
+import com.sofka.taller.ejercicios.ejercicio15.Cinematographic;
 import com.sofka.taller.ejercicios.ejercicio3.Circle;
 import com.sofka.taller.ejercicios.ejercicio4.Product;
 import com.sofka.taller.ejercicios.ejercicio5.EvenOdd;
@@ -197,7 +198,11 @@ public class Main {
 
                         break;
                     case 15:
-                        System.out.println("Revisando ejercicio 15");
+
+                        Cinematographic cinematographic = new Cinematographic();
+
+                        cinematographic.cinematographyMenu();
+
                         break;
                     case 16:
                         System.out.println("Revisando ejercicio 16");

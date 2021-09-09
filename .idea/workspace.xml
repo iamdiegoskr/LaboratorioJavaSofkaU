@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15b336f1-6b9f-49de-b065-5f6271304ee8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sofka/taller/ejercicios/ejercicio14/Numbers2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sofka/taller/ejercicios/ejercicio15/Cinematographic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sofka/taller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sofka/taller/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/sofka/taller/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sofka/taller/Main.class" afterDir="false" />
@@ -48,7 +48,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PrimerTallerJava/CalcularIVA" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PrimerTallerJava/MenuCinemas" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="build.tools" />
   </component>
   <component name="RunManager">
