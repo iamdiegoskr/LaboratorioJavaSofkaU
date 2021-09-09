@@ -12,6 +12,9 @@ public class Main {
 
         Numbers numbers = new Numbers();
 
+
+        System.out.println("**MENU**");
+
         //Ejercio 1
 
         int numberOne = 9;
