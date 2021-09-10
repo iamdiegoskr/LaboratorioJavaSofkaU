@@ -312,8 +312,9 @@ public class Main {
                     case 17:
 
                         String letter = JOptionPane.showInputDialog("Ingrese una letra").toUpperCase();
+                        String color = JOptionPane.showInputDialog("Ingrese un color");
 
-                        HomeAppliances homeAppliances = new HomeAppliances(500,"blanco",letter.charAt(0),900);
+                        HomeAppliances homeAppliances = new HomeAppliances(500,color,letter.charAt(0),900);
                         System.out.println(homeAppliances.toString());
 
 

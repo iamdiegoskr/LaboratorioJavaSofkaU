@@ -18,7 +18,7 @@ public class HomeAppliances {
 
     public HomeAppliances(double basePrice, String color, char energyConsumption, double weight) {
         this.basePrice = basePrice;
-        this.color = color;
+        checkColor(color);
         checkEnergyConsumption(energyConsumption);
         this.weight = weight;
     }
@@ -53,7 +53,58 @@ public class HomeAppliances {
 
     private void checkColor(String color) {
 
+        int count = (int) Constant.COLORS.stream().filter((clr)->clr.equalsIgnoreCase(color)).count();
+
+        if(count>0){
+            this.color = color;
+        }else{
+            this.color = Constant.COLORS.get(0);
+        }
+
     }
+
+    public double getPriceFinal(){
+
+        return this.basePrice +
+                getPrinceEnergyConsumption(this.energyConsumption) + getPriceSize(this.weight);
+
+    }
+
+    private double getPrinceEnergyConsumption(char type){
+
+        switch (type){
+            case 'A':
+                return 100;
+            case 'B':
+                return 80;
+            case 'C':
+                return 60;
+            case 'D':
+                return 50;
+            case 'E':
+                return 30;
+            case 'F':
+                return 10;
+            default:
+                return 0;
+        }
+
+    }
+
+    private double getPriceSize(double weight){
+
+        if(weight>0 && weight<20){
+            return 10;
+        }else if(weight<50){
+            return 50;
+        }else if(weight<80){
+            return 80;
+        }else{
+            return 100;
+        }
+
+    }
+
 
     @Override
     public String toString() {

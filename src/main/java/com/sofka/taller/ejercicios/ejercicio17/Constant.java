@@ -8,6 +8,7 @@ public class Constant {
     public static final List<String> COLORS = Arrays.asList("blanco","negro","rojo","azul","gris");
     static final List<Character> TYPES_CONSUMPTION = Arrays.asList('A','B','C','D','E','F');
     public static final double WEIGHT_BASE = 5;
+    public static final double LOAD = 5;
 
 
 }
