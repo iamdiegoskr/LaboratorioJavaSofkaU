@@ -6,6 +6,8 @@ import com.sofka.taller.ejercicios.ejercicio12.ValidateText;
 import com.sofka.taller.ejercicios.ejercicio13.DateNow;
 import com.sofka.taller.ejercicios.ejercicio14.Numbers2;
 import com.sofka.taller.ejercicios.ejercicio15.Cinematographic;
+import com.sofka.taller.ejercicios.ejercicio16.Person;
+import com.sofka.taller.ejercicios.ejercicio16.Validations;
 import com.sofka.taller.ejercicios.ejercicio3.Circle;
 import com.sofka.taller.ejercicios.ejercicio4.Product;
 import com.sofka.taller.ejercicios.ejercicio5.EvenOdd;
@@ -17,9 +19,7 @@ import com.sofka.taller.ejercicios.ejercicios1y2.Numbers;
 
 import javax.swing.*;
 import java.text.DecimalFormat;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -202,10 +202,111 @@ public class Main {
                         Cinematographic cinematographic = new Cinematographic();
 
                         cinematographic.cinematographyMenu();
-
                         break;
                     case 16:
-                        System.out.println("Revisando ejercicio 16");
+
+                        try{
+
+                            Validations validations = new Validations();
+
+                            ArrayList<Person> allPersons=new ArrayList<Person>();
+
+                            //Persona 1
+                            JOptionPane.showMessageDialog (null,"PERSONA 1 INGRESAR DATOS",
+                                    "LLENAR FORMULARIO",
+                                    JOptionPane.INFORMATION_MESSAGE);
+                            String name =  JOptionPane.showInputDialog("Ingrese su nombre");
+                            int age = validations.validateAge(Integer.parseInt(
+                                    JOptionPane.showInputDialog("Ingrese su edad")
+                            ));
+                            String gender = JOptionPane.
+                                    showInputDialog("Ingrese su genero H.Hombre o M.Mujer").toUpperCase();
+                            double weight = Double.
+                                    parseDouble(JOptionPane.showInputDialog("Ingrese su peso en kg"));
+                            double height = Double.
+                                    parseDouble(JOptionPane.showInputDialog("Ingrese su altura en cm"));
+
+                            Person person1 = new Person(name,age,gender.charAt(0),weight,height);
+                            allPersons.add(person1);
+
+                            //Persona 2
+                            JOptionPane.showMessageDialog (null,"PERSONA 2 INGRESAR DATOS",
+                                    "LLENAR FORMULARIO",
+                                    JOptionPane.INFORMATION_MESSAGE);
+
+                            String name2 =  JOptionPane.showInputDialog("Ingrese su nombre");
+                            int age2 = validations.validateAge(Integer.parseInt(
+                                    JOptionPane.showInputDialog("Ingrese su edad")
+                            ));
+                            String gender2 = JOptionPane.
+                                    showInputDialog("Ingrese su genero H.Hombre o M.Mujer").toUpperCase();
+
+                            Person person2 = new Person(name2,age2,gender2.charAt(0));
+                            allPersons.add(person2);
+
+
+
+                            //Persona 3
+                            Person person3 = new Person();
+                            person3.setName("Messi");
+                            person3.setAge(34);
+                            person3.setGender('H');
+                            person3.setWeight(68);
+                            person3.setHeight(170);
+
+                            allPersons.add(person3);
+
+
+
+                            for (Person person : allPersons){
+
+                                //Indicar si su peso es ideal o no
+                                if(person.calculateIMC()==-1){
+                                    String message = person.getName() + " tienes buen indice de peso";
+                                    JOptionPane.showMessageDialog (null,message,
+                                            "INDICE DE MASA CORPORAL",
+                                            JOptionPane.INFORMATION_MESSAGE);
+                                }else if(person.calculateIMC()==0){
+                                    String message = person.getName() + " estas por debajo de tu peso ideal";
+                                    JOptionPane.showMessageDialog (null,message,
+                                            "INDICE DE MASA CORPORAL",
+                                            JOptionPane.INFORMATION_MESSAGE);
+                                }else{
+                                    String message = person.getName() + " tienes sobrepeso, cuidate";
+                                    JOptionPane.showMessageDialog (null,message,
+                                            "INDICE DE MASA CORPORAL",
+                                            JOptionPane.INFORMATION_MESSAGE);
+                                }
+
+                                //Indicar si es mayor de edad
+
+                                if(person.isAdult()){
+                                    String message = person.getName() + " eres mayor de edad";
+                                    JOptionPane.showMessageDialog (null,message,
+                                            "ERES MAYOR DE EDAD?",
+                                            JOptionPane.INFORMATION_MESSAGE);
+                                }else {
+                                    String message = person.getName() + " eres menor de edad";
+                                    JOptionPane.showMessageDialog (null,message,
+                                            "ERES MAYOR DE EDAD?",
+                                            JOptionPane.INFORMATION_MESSAGE);
+                                }
+
+                            }
+
+
+                            for (Person person : allPersons){
+                                JOptionPane.showMessageDialog (null,person.toString(),
+                                        "ERES MAYOR DE EDAD?",
+                                        JOptionPane.INFORMATION_MESSAGE);
+                            }
+
+
+
+                        }catch (Exception e){
+                            JOptionPane.showMessageDialog(null, e.getMessage(),
+                                    "ERROR_MESSAGE", JOptionPane.ERROR_MESSAGE);
+                        }
                         break;
                     case 17:
                         System.out.println("Revisando ejercicio 17");
