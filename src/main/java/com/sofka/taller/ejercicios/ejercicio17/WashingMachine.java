@@ -8,9 +8,8 @@ public class WashingMachine extends HomeAppliances{
         super();
     }
 
-    public WashingMachine(double basePrice, double weight, double load) {
+    public WashingMachine(double basePrice, double weight) {
         super(basePrice, weight);
-        this.load = load;
     }
 
     public WashingMachine(double basePrice, String color, char energyConsumption, double weight, double load) {

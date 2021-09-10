@@ -9,6 +9,8 @@ import com.sofka.taller.ejercicios.ejercicio15.Cinematographic;
 import com.sofka.taller.ejercicios.ejercicio16.Person;
 import com.sofka.taller.ejercicios.ejercicio16.Validations;
 import com.sofka.taller.ejercicios.ejercicio17.HomeAppliances;
+import com.sofka.taller.ejercicios.ejercicio17.Tv;
+import com.sofka.taller.ejercicios.ejercicio17.WashingMachine;
 import com.sofka.taller.ejercicios.ejercicio3.Circle;
 import com.sofka.taller.ejercicios.ejercicio4.Product;
 import com.sofka.taller.ejercicios.ejercicio5.EvenOdd;
@@ -311,19 +313,85 @@ public class Main {
                         break;
                     case 17:
 
-                        String letter = JOptionPane.showInputDialog("Ingrese una letra").toUpperCase();
-                        String color = JOptionPane.showInputDialog("Ingrese un color");
+                        double priceAllHomeAppliances = 0;
+                        double priceAllWashingMachine = 0;
+                        double priceAllTvs = 0;
 
-                        HomeAppliances homeAppliances = new HomeAppliances(500,color,letter.charAt(0),900);
-                        System.out.println(homeAppliances.toString());
+                        //Creamos electrodomesticos generales
+
+                        HomeAppliances homeAppliances1 = new HomeAppliances(100,"negro",
+                                'D',50);
+
+                        HomeAppliances homeAppliances2 = new HomeAppliances();
+
+                        HomeAppliances homeAppliances3 = new HomeAppliances(200,80);
+
+                        //Creamos Lavadoras
+
+                        WashingMachine washingMachine = new WashingMachine(200,
+                                "morado",'X',40,30);
+
+                        WashingMachine washingMachine1 = new WashingMachine();
+
+                        WashingMachine washingMachine2 = new WashingMachine(300,120);
 
 
+                        //Televisores
+
+                        Tv tv = new Tv(50,"gris",'B',120,80,true);
+
+                        Tv tv1 = new Tv(70,95);
+
+                        Tv tv2 = new Tv();
+
+                        Tv tv3 = new Tv(40,"amarillo",'C',100,30,false);
 
 
+                        HomeAppliances []allProducts = {homeAppliances1,homeAppliances2,homeAppliances3,
+                                washingMachine,washingMachine1,washingMachine2,tv,tv1,tv2,tv3};
 
+
+                        for (HomeAppliances e: allProducts) {
+                            if(e instanceof HomeAppliances ){
+                                priceAllHomeAppliances+=e.getPriceFinal();
+                            }
+                            if (e instanceof  WashingMachine){
+                                priceAllWashingMachine+=e.getPriceFinal();
+                            }
+                            if(e instanceof  Tv){
+                                priceAllTvs+=e.getPriceFinal();
+                            }
+                        }
+
+                        double priceTotalToPay = priceAllHomeAppliances + priceAllWashingMachine + priceAllTvs;
+
+                        String priceTotalHomeAppliances = "El precio de todos los electrodomesticos generales " +
+                                " es de : " + priceAllHomeAppliances;
+
+                        String priceTotalWashingMachine = "El precio de todas las " +
+                                "lavadoras es de : " + priceAllWashingMachine;
+
+                        String priceTotalTv = "EL precio de todos los televisores es de : " + priceAllTvs;
+
+                        JOptionPane.showMessageDialog (null,priceTotalHomeAppliances,
+                                "ERES MAYOR DE EDAD?",
+                                JOptionPane.INFORMATION_MESSAGE);
+
+                        JOptionPane.showMessageDialog (null,priceTotalWashingMachine,
+                                "ERES MAYOR DE EDAD?",
+                                JOptionPane.INFORMATION_MESSAGE);
+
+                        JOptionPane.showMessageDialog (null,priceTotalTv,
+                                "ERES MAYOR DE EDAD?",
+                                JOptionPane.INFORMATION_MESSAGE);
+
+                        JOptionPane.showMessageDialog (null,"EL PRECIO TOTAL ES DE $ " +
+                                        priceTotalToPay,
+                                "ERES MAYOR DE EDAD?",
+                                JOptionPane.INFORMATION_MESSAGE);
                         break;
                     case 18:
-                        System.out.println("Revisando ejercicio 18");
+
                         break;
                     default:
                         System.out.println("Ingrese un valor valido");

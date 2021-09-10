@@ -9,6 +9,7 @@ public class Constant {
     static final List<Character> TYPES_CONSUMPTION = Arrays.asList('A','B','C','D','E','F');
     public static final double WEIGHT_BASE = 5;
     public static final double LOAD = 5;
+    public static final int RESOLUTION_TV = 20;
 
 
 }
