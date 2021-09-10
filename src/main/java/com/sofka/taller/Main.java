@@ -8,6 +8,7 @@ import com.sofka.taller.ejercicios.ejercicio14.Numbers2;
 import com.sofka.taller.ejercicios.ejercicio15.Cinematographic;
 import com.sofka.taller.ejercicios.ejercicio16.Person;
 import com.sofka.taller.ejercicios.ejercicio16.Validations;
+import com.sofka.taller.ejercicios.ejercicio17.HomeAppliances;
 import com.sofka.taller.ejercicios.ejercicio3.Circle;
 import com.sofka.taller.ejercicios.ejercicio4.Product;
 import com.sofka.taller.ejercicios.ejercicio5.EvenOdd;
@@ -309,7 +310,16 @@ public class Main {
                         }
                         break;
                     case 17:
-                        System.out.println("Revisando ejercicio 17");
+
+                        String letter = JOptionPane.showInputDialog("Ingrese una letra").toUpperCase();
+
+                        HomeAppliances homeAppliances = new HomeAppliances(500,"blanco",letter.charAt(0),900);
+                        System.out.println(homeAppliances.toString());
+
+
+
+
+
                         break;
                     case 18:
                         System.out.println("Revisando ejercicio 18");
