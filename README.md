@@ -3,6 +3,8 @@
 Trabajo realizado para el training de sofka university.
 
 > TRABAJO REALIZADO CON JAVA 11
+> 
+> GESTOR DE DEPENDENCIAS -> MAVEN
 
 By Juan Diego Loaiza Martinez.
 
