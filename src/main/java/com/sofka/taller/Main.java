@@ -51,75 +51,93 @@ public class Main {
                         Numbers numbers = new Numbers();
                         String result = numbers.biggerNumber(number1,number2);
 
-                        JOptionPane.showMessageDialog (null, result, "Comparar numeros",
-                                JOptionPane.INFORMATION_MESSAGE);
+                        showMessages(result,"Comparacion de numeros");
+
                         break;
                     case 2:
 
-                        int numberOne = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un numero"));
-                        int numberTwo = Integer.parseInt(JOptionPane.showInputDialog("Ingrese otro numero"));
+                        try {
 
-                        Numbers numbers2 = new Numbers();
-                        String resultNumber = numbers2.biggerNumber(numberOne,numberTwo);
+                            int numberOne = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un numero"));
+                            int numberTwo = Integer.parseInt(JOptionPane.showInputDialog("Ingrese otro numero"));
 
-                        JOptionPane.showMessageDialog (null, resultNumber, "Comparar numeros",
-                                JOptionPane.INFORMATION_MESSAGE);
+                            Numbers numbers2 = new Numbers();
+                            String resultNumber = numbers2.biggerNumber(numberOne,numberTwo);
+
+                            showMessages(resultNumber,"Comparar numeros digitados por usuario");
+
+                        }catch (Exception e){
+                            showErrorMessage(e.getMessage());
+                        }
+
                         break;
                     case 3 :
 
-                        double radio = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el radio del circulo "));
+                        try {
 
-                        Circle circle = new Circle();
-                        double areaCircle = circle.calculateAreaCircle(radio);
+                            double radio = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el radio del circulo "));
 
-                        String response = "El area del circulo es de  " + df2.format(areaCircle) + " metros cuadrados";
+                            Circle circle = new Circle();
+                            double areaCircle = circle.calculateAreaCircle(radio);
 
-                        JOptionPane.showMessageDialog (null,response, "Comparar numeros",
-                                JOptionPane.INFORMATION_MESSAGE);
+                            String response = "El area del circulo es de  " + df2.format(areaCircle) + " metros cuadrados";
+
+                            showMessages(response,"Calcular area del circulo");
+
+                        }catch (Exception e){
+                            showErrorMessage("Error debe digitar un numero");
+                        }
 
                         break;
                     case 4:
 
-                        String nameProduct = JOptionPane.showInputDialog("Ingrese nombre del producto");
-                        double price = Double.parseDouble(JOptionPane.showInputDialog("Ingrese precio del producto"));
+                        try {
 
-                        Product product = new Product();
+                            String nameProduct = JOptionPane.showInputDialog("Ingrese nombre del producto");
+                            double price = Double.parseDouble(JOptionPane.showInputDialog("Ingrese precio del producto"));
 
-                        String responseIVA = product.responsePriceIvA(nameProduct,price);
+                            Product product = new Product();
 
-                        JOptionPane.showMessageDialog (null,responseIVA, "Productos con iva",
-                                JOptionPane.INFORMATION_MESSAGE);
+                            String responseIVA = product.responsePriceIvA(nameProduct,price);
+
+                            showMessages(responseIVA,"Productos con iva");
+
+                        }catch (Exception e){
+                            showErrorMessage("Error inesperado");
+                        }
                         break;
                     case 5:
 
-                        EvenOdd evenOdd = new EvenOdd();
+                        try{
+                            EvenOdd evenOdd = new EvenOdd();
 
-                        String resultNumbersPair = evenOdd.generateNumberPair();
-
-                        JOptionPane.showMessageDialog (null,resultNumbersPair, "NUMEROS PARES DEL 1 AL 100",
-                                JOptionPane.INFORMATION_MESSAGE);
+                            String resultNumbersPair = evenOdd.generateNumberPair();
+                            showMessages(resultNumbersPair,"Numeros pares del 1 al 100");
 
 
-                        String resultNumbersOdd = evenOdd.generateNumberOdd();
+                            String resultNumbersOdd = evenOdd.generateNumberOdd();
+                            showMessages(resultNumbersOdd,"Numeros impares del 1 al 100");
 
-                        JOptionPane.showMessageDialog (null,resultNumbersOdd, "NUMEROS IMPARES DEL 1 AL 100",
-                                JOptionPane.INFORMATION_MESSAGE);
+                        }catch (Exception e){
+                            showErrorMessage("Error inesperado");
+                        }
 
                         break;
                     case 6:
+                        try{
+                            EvenAddWithFor evenAddWithFor = new EvenAddWithFor();
 
-                        EvenAddWithFor evenAddWithFor = new EvenAddWithFor();
+                            evenAddWithFor.isOddOrEven();
 
-                        evenAddWithFor.isOddOrEven();
+                            String resultNumberEven = evenAddWithFor.getNumbersEven();
+                            String resultNumberOdd2 = evenAddWithFor.getNumberOdd();
 
-                        String resultNumberEven = evenAddWithFor.getNumbersEven();
-                        String resultNumberOdd2 = evenAddWithFor.getNumberOdd();
+                            showMessages(resultNumberEven,"Numeros pares del 1 al 100 utilizando FOR");
+                            showMessages(resultNumberOdd2, "Numeros impares del 1 al 100 utilizando FOR");
 
-                        JOptionPane.showMessageDialog (null,resultNumberEven, "NUMEROS PARES DEL 1 AL 100",
-                                JOptionPane.INFORMATION_MESSAGE);
-
-                        JOptionPane.showMessageDialog (null,resultNumberOdd2, "NUMEROS IMPARES DEL 1 AL 100",
-                                JOptionPane.INFORMATION_MESSAGE);
+                        }catch (Exception e){
+                            showErrorMessage("Error inesperado");
+                        }
                         break;
                     case 7:
 
@@ -127,8 +145,7 @@ public class Main {
 
                         String responseNumberZero = numberZero.validateIfNumberIsZero();
 
-                        JOptionPane.showMessageDialog (null,responseNumberZero, "NUMERO MAYOR A 0",
-                                JOptionPane.INFORMATION_MESSAGE);
+                        showMessages(responseNumberZero,"Numero mayor a cero");
 
                         break;
                     case 8:
@@ -139,25 +156,32 @@ public class Main {
                         break;
                     case 9:
 
-                        Text text = new Text();
+                        try{
+                            Text text = new Text();
 
-                        String textUser = JOptionPane.showInputDialog("Ingrese una frase");
+                            String textUser = JOptionPane.showInputDialog("Ingrese una frase");
 
-                        String resultText = text.replaceText(textUser);
+                            String resultText = text.replaceText(textUser);
 
-                        JOptionPane.showMessageDialog (null,resultText, "TEXTO REEMPLAZADO",
-                                JOptionPane.INFORMATION_MESSAGE);
+                            showMessages(resultText, "Texto reemplazado");
+
+                        }catch (Exception e){
+                            showErrorMessage("Error inesperado");
+                        }
                         break;
                     case 10:
 
-                        SpaceText spaceText = new SpaceText();
+                        try{
+                            SpaceText spaceText = new SpaceText();
 
-                        String textToRemoveSpace = JOptionPane.showInputDialog("Ingrese un mensaje");
+                            String textToRemoveSpace = JOptionPane.showInputDialog("Ingrese un mensaje");
 
-                        String responseTextWithoutSpaces = spaceText.removeSpaceText(textToRemoveSpace);
+                            String responseTextWithoutSpaces = spaceText.removeSpaceText(textToRemoveSpace);
 
-                        JOptionPane.showMessageDialog (null,responseTextWithoutSpaces, "TEXTO SIN ESPACIOS",
-                                JOptionPane.INFORMATION_MESSAGE);
+                            showMessages(responseTextWithoutSpaces,"Texto sin espacios");
+                        }catch (Exception e){
+                            showErrorMessage("Error inesperado");
+                        }
                         break;
                     case 11:
 
@@ -177,8 +201,7 @@ public class Main {
 
                         String responseDifference = validateText.showDifferenceTexts(wordDifference1,wordDifference2);
 
-                        JOptionPane.showMessageDialog (null,responseDifference, "DIFERENCIAS ENTRE TEXTOS",
-                                JOptionPane.INFORMATION_MESSAGE);
+                        showMessages(responseDifference,"Diferencia entre cadenas");
                         break;
                     case 13:
 
@@ -186,24 +209,27 @@ public class Main {
 
                         String currentDate = dateNow.checkCurrentDate();
 
-                        JOptionPane.showMessageDialog (null,currentDate, "DIFERENCIAS ENTRE TEXTOS",
-                                JOptionPane.INFORMATION_MESSAGE);
+                        showMessages(currentDate,"Fecha actual");
                         break;
                     case 14:
 
-                        Numbers2 sequenceNumber = new Numbers2();
+                        try {
+                            Numbers2 sequenceNumber = new Numbers2();
 
-                        int numberStart = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un numero no mayor a 1000"));
+                            int numberStart = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un numero no mayor a 1000"));
 
-                        String sequence = sequenceNumber.printNumbers(numberStart);
+                            String sequence = sequenceNumber.printNumbers(numberStart);
 
-                        System.out.println(sequence);
+                            System.out.println(sequence);
+
+                        }catch (Exception e){
+                            showErrorMessage("Error inesperado");
+                        }
 
                         break;
                     case 15:
 
                         Cinematographic cinematographic = new Cinematographic();
-
                         cinematographic.cinematographyMenu();
                         break;
                     case 16:
@@ -215,9 +241,8 @@ public class Main {
                             ArrayList<Person> allPersons=new ArrayList<Person>();
 
                             //Persona 1
-                            JOptionPane.showMessageDialog (null,"PERSONA 1 INGRESAR DATOS",
-                                    "LLENAR FORMULARIO",
-                                    JOptionPane.INFORMATION_MESSAGE);
+                            showMessages("Persona 1 ingresar datos","Suministro de datos");
+
                             String name =  JOptionPane.showInputDialog("Ingrese su nombre");
                             int age = validations.validateAge(Integer.parseInt(
                                     JOptionPane.showInputDialog("Ingrese su edad")
@@ -233,9 +258,7 @@ public class Main {
                             allPersons.add(person1);
 
                             //Persona 2
-                            JOptionPane.showMessageDialog (null,"PERSONA 2 INGRESAR DATOS",
-                                    "LLENAR FORMULARIO",
-                                    JOptionPane.INFORMATION_MESSAGE);
+                            showMessages("Persona 2 ingresar datos","Suministro de datos");
 
                             String name2 =  JOptionPane.showInputDialog("Ingrese su nombre");
                             int age2 = validations.validateAge(Integer.parseInt(
@@ -266,129 +289,96 @@ public class Main {
                                 //Indicar si su peso es ideal o no
                                 if(person.calculateIMC()==-1){
                                     String message = person.getName() + " tienes buen indice de peso";
-                                    JOptionPane.showMessageDialog (null,message,
-                                            "INDICE DE MASA CORPORAL",
-                                            JOptionPane.INFORMATION_MESSAGE);
+                                    showMessages(message,"INDICE MASA CORPORAL");
+
                                 }else if(person.calculateIMC()==0){
                                     String message = person.getName() + " estas por debajo de tu peso ideal";
-                                    JOptionPane.showMessageDialog (null,message,
-                                            "INDICE DE MASA CORPORAL",
-                                            JOptionPane.INFORMATION_MESSAGE);
+                                    showMessages(message,"INDICE MASA CORPORAL");
                                 }else{
                                     String message = person.getName() + " tienes sobrepeso, cuidate";
-                                    JOptionPane.showMessageDialog (null,message,
-                                            "INDICE DE MASA CORPORAL",
-                                            JOptionPane.INFORMATION_MESSAGE);
+                                    showMessages(message,"INDICE MASA CORPORAL");
                                 }
 
                                 //Indicar si es mayor de edad
 
                                 if(person.isAdult()){
                                     String message = person.getName() + " eres mayor de edad";
-                                    JOptionPane.showMessageDialog (null,message,
-                                            "ERES MAYOR DE EDAD?",
-                                            JOptionPane.INFORMATION_MESSAGE);
+                                    showMessages(message,"ERES MAYOR DE EDAD ?");
                                 }else {
                                     String message = person.getName() + " eres menor de edad";
-                                    JOptionPane.showMessageDialog (null,message,
-                                            "ERES MAYOR DE EDAD?",
-                                            JOptionPane.INFORMATION_MESSAGE);
+                                    showMessages(message,"ERES MAYOR DE EDAD ?");
                                 }
 
                             }
 
-
                             for (Person person : allPersons){
-                                JOptionPane.showMessageDialog (null,person.toString(),
-                                        "ERES MAYOR DE EDAD?",
-                                        JOptionPane.INFORMATION_MESSAGE);
+                                showMessages(person.toString(),"INFORMACION DETALLA DE USUARIOS");
                             }
 
-
-
                         }catch (Exception e){
-                            JOptionPane.showMessageDialog(null, e.getMessage(),
-                                    "ERROR_MESSAGE", JOptionPane.ERROR_MESSAGE);
+                            showErrorMessage(e.getMessage());
                         }
                         break;
                     case 17:
+                        try {
+                            double priceAllHomeAppliances = 0;
+                            double priceAllWashingMachine = 0;
+                            double priceAllTvs = 0;
 
-                        double priceAllHomeAppliances = 0;
-                        double priceAllWashingMachine = 0;
-                        double priceAllTvs = 0;
+                            //Creamos electrodomesticos generales
+                            HomeAppliances homeAppliances1 = new HomeAppliances(100,"negro",
+                                    'D',50);
+                            HomeAppliances homeAppliances2 = new HomeAppliances();
+                            HomeAppliances homeAppliances3 = new HomeAppliances(200,80);
 
-                        //Creamos electrodomesticos generales
-
-                        HomeAppliances homeAppliances1 = new HomeAppliances(100,"negro",
-                                'D',50);
-
-                        HomeAppliances homeAppliances2 = new HomeAppliances();
-
-                        HomeAppliances homeAppliances3 = new HomeAppliances(200,80);
-
-                        //Creamos Lavadoras
-
-                        WashingMachine washingMachine = new WashingMachine(200,
-                                "morado",'X',40,30);
-
-                        WashingMachine washingMachine1 = new WashingMachine();
-
-                        WashingMachine washingMachine2 = new WashingMachine(300,120);
+                            //Creamos Lavadoras
+                            WashingMachine washingMachine = new WashingMachine(200,
+                                    "morado",'X',40,30);
+                            WashingMachine washingMachine1 = new WashingMachine();
+                            WashingMachine washingMachine2 = new WashingMachine(300,120);
 
 
-                        //Televisores
-
-                        Tv tv = new Tv(50,"gris",'B',120,80,true);
-
-                        Tv tv1 = new Tv(70,95);
-
-                        Tv tv2 = new Tv();
-
-                        Tv tv3 = new Tv(40,"amarillo",'C',100,30,false);
+                            //Televisores
+                            Tv tv = new Tv(50,"gris",'B',120,80,true);
+                            Tv tv1 = new Tv(70,95);
+                            Tv tv2 = new Tv();
+                            Tv tv3 = new Tv(40,"amarillo",'C',100,30,false);
 
 
-                        HomeAppliances []allProducts = {homeAppliances1,homeAppliances2,homeAppliances3,
-                                washingMachine,washingMachine1,washingMachine2,tv,tv1,tv2,tv3};
+                            HomeAppliances []allProducts = {homeAppliances1,homeAppliances2,homeAppliances3,
+                                    washingMachine,washingMachine1,washingMachine2,tv,tv1,tv2,tv3};
 
 
-                        for (HomeAppliances e: allProducts) {
-                            if(e instanceof HomeAppliances ){
-                                priceAllHomeAppliances+=e.getPriceFinal();
+                            for (HomeAppliances e: allProducts) {
+                                if(e instanceof HomeAppliances ){
+                                    priceAllHomeAppliances+=e.getPriceFinal();
+                                }
+                                if (e instanceof  WashingMachine){
+                                    priceAllWashingMachine+=e.getPriceFinal();
+                                }
+                                if(e instanceof  Tv){
+                                    priceAllTvs+=e.getPriceFinal();
+                                }
                             }
-                            if (e instanceof  WashingMachine){
-                                priceAllWashingMachine+=e.getPriceFinal();
-                            }
-                            if(e instanceof  Tv){
-                                priceAllTvs+=e.getPriceFinal();
-                            }
+
+                            double priceTotalToPay = priceAllHomeAppliances + priceAllWashingMachine + priceAllTvs;
+
+                            String priceTotalHomeAppliances = "El precio de todos los electrodomesticos generales " +
+                                    " es de : " + priceAllHomeAppliances;
+
+                            String priceTotalWashingMachine = "El precio de todas las " +
+                                    "lavadoras es de : " + priceAllWashingMachine;
+
+                            String priceTotalTv = "EL precio de todos los televisores es de : " + priceAllTvs;
+
+                            showMessages(priceTotalHomeAppliances,"ELECTRODOMESTICOS");
+                            showMessages(priceTotalWashingMachine,"LAVADORAS");
+                            showMessages(priceTotalTv,"TELEVISORES");
+                            showMessages("El precio total es de $ " + priceTotalToPay, "PRECIO FINAL");
+
+                        }catch (Exception e){
+                            showErrorMessage("Error inesperado");
                         }
-
-                        double priceTotalToPay = priceAllHomeAppliances + priceAllWashingMachine + priceAllTvs;
-
-                        String priceTotalHomeAppliances = "El precio de todos los electrodomesticos generales " +
-                                " es de : " + priceAllHomeAppliances;
-
-                        String priceTotalWashingMachine = "El precio de todas las " +
-                                "lavadoras es de : " + priceAllWashingMachine;
-
-                        String priceTotalTv = "EL precio de todos los televisores es de : " + priceAllTvs;
-
-                        JOptionPane.showMessageDialog (null,priceTotalHomeAppliances,
-                                "ERES MAYOR DE EDAD?",
-                                JOptionPane.INFORMATION_MESSAGE);
-
-                        JOptionPane.showMessageDialog (null,priceTotalWashingMachine,
-                                "ERES MAYOR DE EDAD?",
-                                JOptionPane.INFORMATION_MESSAGE);
-
-                        JOptionPane.showMessageDialog (null,priceTotalTv,
-                                "ERES MAYOR DE EDAD?",
-                                JOptionPane.INFORMATION_MESSAGE);
-
-                        JOptionPane.showMessageDialog (null,"EL PRECIO TOTAL ES DE $ " +
-                                        priceTotalToPay,
-                                "ERES MAYOR DE EDAD?",
-                                JOptionPane.INFORMATION_MESSAGE);
                         break;
                     case 18:
 
@@ -401,6 +391,16 @@ public class Main {
 
         }while (option!=0);
 
+    }
+
+    public static void showMessages(String message,String title){
+        JOptionPane.showMessageDialog (null,message, title,
+                JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public static void showErrorMessage(String error){
+        JOptionPane.showMessageDialog(null, error,
+                "ERROR_MESSAGE", JOptionPane.ERROR_MESSAGE);
     }
 
     public static String printMenu(){

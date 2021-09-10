@@ -8,10 +8,16 @@ public class NumberZero {
 
         int number = 0;
 
-        do {
-            number = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un numero por favor"));
+        try {
+            do {
+                number = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un numero por favor"));
 
-        }while(number<0);
+            }while(number<0);
+
+        }catch (Exception e){
+            JOptionPane.showMessageDialog (null,"Error inesperado", "ERROR",
+                    JOptionPane.ERROR_MESSAGE);
+        }
 
         return "El numero ingresado fue " + number;
 
