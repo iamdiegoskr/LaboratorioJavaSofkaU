@@ -11,6 +11,8 @@ import com.sofka.taller.ejercicios.ejercicio16.Validations;
 import com.sofka.taller.ejercicios.ejercicio17.HomeAppliances;
 import com.sofka.taller.ejercicios.ejercicio17.Tv;
 import com.sofka.taller.ejercicios.ejercicio17.WashingMachine;
+import com.sofka.taller.ejercicios.ejercicio18.Serie;
+import com.sofka.taller.ejercicios.ejercicio18.VideoGame;
 import com.sofka.taller.ejercicios.ejercicio3.Circle;
 import com.sofka.taller.ejercicios.ejercicio4.Product;
 import com.sofka.taller.ejercicios.ejercicio5.EvenOdd;
@@ -382,9 +384,77 @@ public class Main {
                         break;
                     case 18:
 
+                        try {
+
+                            Serie serie1 = new Serie();
+                            Serie serie2 = new Serie("Dark","Baran bo Odar");
+                            Serie serie3 = new Serie("Stranger things",3, "Science fiction", "Hermanos Duffer");
+                            Serie serie4 = new Serie("Peaky Blinders",6, "Crime", "Steven Knight");
+                            Serie serie5 = new Serie("La casa de papel","Alex Pina");
+
+                            Serie[] allSeries ={serie1, serie2, serie3, serie4, serie5};
+
+                            VideoGame videoGame1 = new VideoGame();
+                            VideoGame videoGame2 = new VideoGame("Grand Theft Auto V",500);
+                            VideoGame videoGame3 = new VideoGame("FIFA 21",1000,
+                                    "Sports"," Electronic Arts");
+                            VideoGame videoGame4 = new VideoGame("Spider-Man",100,"adventure","Insomniac Games");
+                            VideoGame videoGame5 = new VideoGame("Halo 2",200);
+
+                            VideoGame[] allVideoGames={videoGame1, videoGame2, videoGame3, videoGame4, videoGame5};
+
+                            allSeries[2].deliver();
+                            allSeries[3].deliver();
+                            allSeries[4].deliver();
+
+                            allVideoGames[2].deliver();
+                            allVideoGames[3].deliver();
+                            allVideoGames[4].deliver();
+
+
+                            int quantityDelivered=0;
+                            for (Serie s: allSeries) {
+                                if (s.isDelivered()){
+                                    quantityDelivered+=1;
+                                    s.toReturn();
+                                }
+                            }
+                            for (VideoGame v: allVideoGames) {
+                                if (v.isDelivered()){
+                                    quantityDelivered+=1;
+                                    v.toReturn();
+                                }
+                            }
+                            String messageDelivers = "Hay "+ quantityDelivered +" " +
+                                    "cantidades entregadas de Series y Videojuegos";
+
+                            showMessages(messageDelivers,"TOTAL ENTREGADOS");
+
+                            VideoGame videoDameMoreHours = allVideoGames[0];
+                            Serie seriesMoreSeasons = allSeries[0];
+
+                            for (int i = 1; i < allVideoGames.length; i++) {
+                                if (allVideoGames[i].compareTo(videoDameMoreHours)){
+                                    videoDameMoreHours=allVideoGames[i];
+                                }
+                                if (allSeries[i].compareTo(seriesMoreSeasons)){
+                                    seriesMoreSeasons=allSeries[i];
+                                }
+                            }
+
+                           String videoGameMoreHours = "El videojuego con mas horas es  "+videoDameMoreHours.toString()  + '\n';
+                                showMessages(videoGameMoreHours,"VIDEOJUEGO CON MAS HORAS");
+
+                           String serieMoreSeason = "La serie con mas temporadas es"+ seriesMoreSeasons.toString() + '\n';
+                                showMessages(serieMoreSeason,"SERIE CON MAS TEMPORADAS");
+
+                        }catch (Exception e){
+                            showErrorMessage("Error inesperado");
+                        }
+
                         break;
                     default:
-                        System.out.println("Ingrese un valor valido");
+                        showErrorMessage("Ingrese un valor valido");
                 }
 
             }
